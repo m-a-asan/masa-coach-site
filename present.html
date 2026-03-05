@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>40代からの心理ブレーキを外す7日間プログラム｜まさ Coaching</title>
+    <meta name="description" content="「なぜ私だけ動けないの？」バンデューラ・ABC理論・If-Thenプランで、今日から0.1mm動き出す実践ガイド。">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* ===== リセット & 基本設定 ===== */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --bg-deep: #0b1a1a;
+            --bg-mid: #112222;
+            --bg-card: rgba(255, 255, 255, 0.04);
+            --gold: #c9a84c;
+            --gold-light: #e8c96a;
+            --gold-glow: rgba(201, 168, 76, 0.15);
+            --text-main: #e8e0d0;
+            --text-sub: #9aada8;
+            --border: rgba(201, 168, 76, 0.2);
+            --font-serif: 'Noto Serif JP', serif;
+            --font-sans: 'Noto Sans JP', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background: var(--bg-deep);
+            color: var(--text-main);
+            line-height: 1.9;
+            overflow-x: hidden;
+        }
+
+        /* ===== スクロールバー ===== */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-deep);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--gold);
+            border-radius: 3px;
+        }
+
+        /* ===== 進捗バー ===== */
+        #progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            width: 0%;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+            z-index: 1000;
+            transition: width 0.1s ease;
+        }
+
+        /* ===== ヘッダー ===== */
+        header {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 24px;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 50% 0%, rgba(201, 168, 76, 0.14) 0%, transparent 60%),
+                radial-gradient(ellipse at 20% 80%, rgba(17, 70, 60, 0.4) 0%, transparent 50%),
+                linear-gradient(160deg, #0b1a1a 0%, #112222 50%, #0b2020 100%);
+            z-index: 0;
+        }
+
+        /* 星パーティクル */
+        header::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(1px 1px at 15% 25%, rgba(201, 168, 76, 0.7) 0%, transparent 100%),
+                radial-gradient(1px 1px at 80% 15%, rgba(201, 168, 76, 0.5) 0%, transparent 100%),
+                radial-gradient(1px 1px at 60% 70%, rgba(201, 168, 76, 0.6) 0%, transparent 100%),
+                radial-gradient(1px 1px at 10% 65%, rgba(201, 168, 76, 0.4) 0%, transparent 100%),
+                radial-gradient(1px 1px at 90% 55%, rgba(201, 168, 76, 0.5) 0%, transparent 100%),
+                radial-gradient(1px 1px at 40% 88%, rgba(201, 168, 76, 0.4) 0%, transparent 100%),
+                radial-gradient(1.5px 1.5px at 70% 35%, rgba(255, 240, 180, 0.6) 0%, transparent 100%),
+                radial-gradient(1px 1px at 30% 50%, rgba(201, 168, 76, 0.3) 0%, transparent 100%),
+                radial-gradient(1px 1px at 55% 10%, rgba(255, 240, 180, 0.4) 0%, transparent 100%);
+            z-index: 0;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+        }
+
+        .header-label {
+            font-size: 11px;
+            font-weight: 300;
+            letter-spacing: 6px;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 36px;
+            opacity: 0.85;
+        }
+
+        .header-badge {
+            display: inline-block;
+            font-size: 12px;
+            letter-spacing: 3px;
+            color: var(--bg-deep);
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            padding: 6px 20px;
+            border-radius: 50px;
+            margin-bottom: 28px;
+            font-weight: 600;
+        }
+
+        .header-question {
+            font-family: var(--font-serif);
+            font-size: clamp(15px, 2.5vw, 20px);
+            color: var(--gold-light);
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            opacity: 0.9;
+        }
+
+        .header-content h1 {
+            font-family: var(--font-serif);
+            font-size: clamp(26px, 5vw, 48px);
+            font-weight: 400;
+            line-height: 1.5;
+            letter-spacing: 2px;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #fff 20%, var(--gold-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-sub {
+            font-size: clamp(12px, 1.8vw, 14px);
+            color: var(--text-sub);
+            letter-spacing: 1px;
+            line-height: 2;
+            margin-bottom: 48px;
+        }
+
+        .gold-line {
+            width: 60px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 0 auto 40px;
+        }
+
+        /* 下矢印アニメーション */
+        .scroll-hint {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-sub);
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            z-index: 1;
+        }
+
+        .scroll-hint::after {
+            content: '';
+            width: 1px;
+            height: 40px;
+            background: linear-gradient(to bottom, var(--gold), transparent);
+            animation: scrollLine 2s ease-in-out infinite;
+        }
+
+        @keyframes scrollLine {
+            0% {
+                transform: scaleY(0);
+                transform-origin: top;
+            }
+
+            50% {
+                transform: scaleY(1);
+                transform-origin: top;
+            }
+
+            51% {
+                transform: scaleY(1);
+                transform-origin: bottom;
+            }
+
+            100% {
+                transform: scaleY(0);
+                transform-origin: bottom;
+            }
+        }
+
+        /* ===== メインコンテンツ ===== */
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 80px 24px;
+        }
+
+        /* ===== セクション共通 ===== */
+        .section {
+            margin-bottom: 80px;
+            opacity: 0;
+            transform: translateY(32px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* セクションラベル */
+        .sec-label {
+            font-size: 10px;
+            letter-spacing: 5px;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        /* セクションタイトル */
+        .sec-title {
+            font-family: var(--font-serif);
+            font-size: clamp(18px, 3vw, 24px);
+            font-weight: 400;
+            color: var(--gold-light);
+            letter-spacing: 2px;
+            margin-bottom: 28px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .sec-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, var(--border), transparent);
+        }
+
+        /* ===== 共感ストーリーブロック ===== */
+        .story-block {
+            border-left: 2px solid var(--gold);
+            padding: 24px 28px;
+            background: rgba(201, 168, 76, 0.04);
+            border-radius: 0 12px 12px 0;
+            margin-bottom: 24px;
+        }
+
+        .story-block p {
+            font-family: var(--font-serif);
+            font-size: 15px;
+            color: var(--text-sub);
+            line-height: 2.2;
+            font-weight: 300;
+        }
+
+        .story-block em {
+            color: var(--gold-light);
+            font-style: normal;
+        }
+
+        /* ===== グラスカード ===== */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 36px 40px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card+.card {
+            margin-top: 20px;
+        }
+
+        /* ===== チャプターヘッダー ===== */
+        .chapter-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .chapter-num {
+            font-family: var(--font-serif);
+            font-size: 36px;
+            font-weight: 300;
+            color: var(--gold);
+            line-height: 1;
+            opacity: 0.5;
+            min-width: 40px;
+        }
+
+        .chapter-title {
+            font-family: var(--font-serif);
+            font-size: clamp(16px, 2.5vw, 20px);
+            font-weight: 400;
+            color: var(--text-main);
+            line-height: 1.4;
+        }
+
+        /* ===== テキストブロック ===== */
+        .body-text {
+            font-size: 14px;
+            color: var(--text-sub);
+            line-height: 2.2;
+        }
+
+        .body-text strong {
+            color: var(--gold-light);
+            font-weight: 600;
+        }
+
+        .body-text .highlight {
+            display: inline-block;
+            background: rgba(201, 168, 76, 0.1);
+            color: var(--gold-light);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+
+        /* フロー矢印 */
+        .flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 20px 0;
+        }
+
+        .flow-item {
+            background: rgba(201, 168, 76, 0.1);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 8px 16px;
+            font-size: 13px;
+            color: var(--gold-light);
+            letter-spacing: 1px;
+        }
+
+        .flow-arrow {
+            color: var(--gold);
+            font-size: 18px;
+            opacity: 0.6;
+        }
+
+        /* ポイントリスト */
+        .point-list {
+            list-style: none;
+            margin: 16px 0;
+        }
+
+        .point-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 14px;
+            color: var(--text-sub);
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            line-height: 1.8;
+        }
+
+        .point-list li:last-child {
+            border-bottom: none;
+        }
+
+        .point-list li::before {
+            content: '—';
+            color: var(--gold);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        /* ===== ワークテンプレート ===== */
+        .work-card {
+            background: linear-gradient(135deg, rgba(201, 168, 76, 0.06), rgba(201, 168, 76, 0.02));
+            border: 1px solid var(--gold);
+            border-radius: 16px;
+            padding: 28px 32px;
+            margin-top: 20px;
+        }
+
+        .work-title {
+            font-family: var(--font-serif);
+            font-size: 14px;
+            color: var(--gold-light);
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .work-title::before {
+            content: '✏';
+            font-size: 16px;
+        }
+
+        .work-field {
+            margin-bottom: 16px;
+        }
+
+        .work-field label {
+            display: block;
+            font-size: 12px;
+            letter-spacing: 2px;
+            color: var(--gold);
+            margin-bottom: 8px;
+            opacity: 0.8;
+        }
+
+        .work-field textarea {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 12px 14px;
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            font-size: 14px;
+            line-height: 1.7;
+            resize: vertical;
+            min-height: 60px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            outline: none;
+        }
+
+        .work-field textarea:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.1);
+        }
+
+        .work-field textarea::placeholder {
+            color: rgba(154, 173, 168, 0.4);
+            font-style: italic;
+        }
+
+        /* ===== ステップリスト（4章） ===== */
+        .step-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-top: 16px;
+        }
+
+        @media (max-width: 520px) {
+            .step-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .step-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 18px 20px;
+            transition: all 0.3s ease;
+        }
+
+        .step-item:hover {
+            background: rgba(201, 168, 76, 0.06);
+            border-color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        .step-num {
+            font-family: var(--font-serif);
+            font-size: 22px;
+            font-weight: 300;
+            color: var(--gold);
+            opacity: 0.6;
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .step-text {
+            font-size: 13px;
+            color: var(--text-sub);
+            line-height: 1.7;
+        }
+
+        /* ===== 7日間プログラム ===== */
+        .day-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .day-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 20px 24px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .day-item:hover {
+            border-color: rgba(201, 168, 76, 0.4);
+            background: rgba(201, 168, 76, 0.04);
+            transform: translateX(4px);
+        }
+
+        .day-badge {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(201, 168, 76, 0.2), rgba(201, 168, 76, 0.05));
+            border: 1px solid var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-serif);
+            font-size: 11px;
+            color: var(--gold);
+            letter-spacing: 0;
+            font-weight: 400;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        .day-content {}
+
+        .day-name {
+            font-family: var(--font-serif);
+            font-size: 15px;
+            color: var(--gold-light);
+            margin-bottom: 4px;
+            letter-spacing: 1px;
+        }
+
+        .day-desc {
+            font-size: 13px;
+            color: var(--text-sub);
+            line-height: 1.7;
+        }
+
+        /* アコーディオン展開ボタン */
+        .day-toggle {
+            margin-top: 10px;
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: var(--gold);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border: none;
+            background: none;
+            padding: 0;
+            font-family: var(--font-sans);
+            transition: opacity 0.2s;
+        }
+
+        .day-toggle:hover {
+            opacity: 0.7;
+        }
+
+        .day-toggle .arrow {
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .day-toggle.open .arrow {
+            transform: rotate(90deg);
+        }
+
+        /* アコーディオン本体 */
+        .day-detail {
+            display: none;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+        }
+
+        .day-detail.open {
+            display: block;
+        }
+
+        /* やることステップ */
+        .do-list {
+            list-style: none;
+            margin-bottom: 14px;
+        }
+
+        .do-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 8px 0;
+            font-size: 13px;
+            color: var(--text-sub);
+            line-height: 1.7;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .do-list li:last-child {
+            border-bottom: none;
+        }
+
+        .do-step-num {
+            flex-shrink: 0;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: rgba(201, 168, 76, 0.15);
+            border: 1px solid var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            color: var(--gold);
+            font-weight: 600;
+            margin-top: 1px;
+        }
+
+        .day-mini-work {
+            background: rgba(201, 168, 76, 0.05);
+            border: 1px solid rgba(201, 168, 76, 0.2);
+            border-radius: 10px;
+            padding: 14px 16px;
+            margin-top: 10px;
+        }
+
+        .day-mini-work label {
+            display: block;
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: var(--gold);
+            margin-bottom: 6px;
+            opacity: 0.8;
+        }
+
+        .day-mini-work textarea {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 10px 12px;
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            font-size: 13px;
+            line-height: 1.6;
+            resize: vertical;
+            min-height: 52px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .day-mini-work textarea:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 2px rgba(201, 168, 76, 0.1);
+        }
+
+        .day-mini-work textarea::placeholder {
+            color: rgba(154, 173, 168, 0.35);
+            font-style: italic;
+        }
+
+        /* ===== アイデンティティ宣言 ===== */
+        .identity-examples {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 16px 0;
+        }
+
+        .identity-tag {
+            font-family: var(--font-serif);
+            font-size: 13px;
+            color: var(--gold-light);
+            background: rgba(201, 168, 76, 0.08);
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            padding: 6px 18px;
+            letter-spacing: 1px;
+        }
+
+        /* ===== If-Then ===== */
+        .ifthen-box {
+            background: rgba(201, 168, 76, 0.06);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin: 16px 0;
+            text-align: center;
+            font-family: var(--font-serif);
+            font-size: 15px;
+            color: var(--text-main);
+            letter-spacing: 1px;
+            line-height: 2;
+        }
+
+        .ifthen-box em {
+            color: var(--gold-light);
+            font-style: normal;
+        }
+
+        /* ===== 区切り ===== */
+        .divider {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border), transparent);
+            margin: 60px 0;
+        }
+
+        /* ===== 最終CTA ===== */
+        .cta-section {
+            text-align: center;
+            padding: 80px 24px;
+            background:
+                radial-gradient(ellipse at center, rgba(201, 168, 76, 0.1) 0%, transparent 70%),
+                var(--bg-mid);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .cta-message {
+            font-family: var(--font-serif);
+            font-size: clamp(14px, 2vw, 17px);
+            color: var(--text-sub);
+            line-height: 2.4;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .cta-message strong {
+            color: var(--gold-light);
+            font-weight: 400;
+        }
+
+        .cta-quote {
+            font-family: var(--font-serif);
+            font-size: clamp(20px, 4vw, 32px);
+            font-weight: 300;
+            color: var(--text-main);
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        .cta-promise {
+            font-size: 13px;
+            color: var(--text-sub);
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+            line-height: 2;
+        }
+
+        .cta-promise span {
+            display: inline-block;
+            margin: 0 12px;
+        }
+
+        /* LINEボタン */
+        .btn-line {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 18px 48px;
+            border-radius: 50px;
+            background: linear-gradient(135deg, #b8922e, var(--gold), #e8c96a);
+            color: #1a1200;
+            font-family: var(--font-sans);
+            font-weight: 700;
+            font-size: 15px;
+            letter-spacing: 1px;
+            text-decoration: none;
+            box-shadow: 0 8px 30px rgba(201, 168, 76, 0.35);
+            transition: all 0.35s ease;
+        }
+
+        .btn-line:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 45px rgba(201, 168, 76, 0.5);
+        }
+
+        .btn-line-icon {
+            font-size: 20px;
+        }
+
+        .keyword-chip {
+            display: inline-block;
+            font-size: 12px;
+            color: var(--gold);
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            padding: 4px 14px;
+            margin-top: 20px;
+            letter-spacing: 1px;
+        }
+
+        /* ===== ナビ戻る ===== */
+        .back-nav {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 100;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .back-nav.visible {
+            opacity: 1;
+        }
+
+        .back-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(201, 168, 76, 0.4);
+            transition: transform 0.3s ease;
+            border: none;
+            font-size: 18px;
+        }
+
+        .back-btn:hover {
+            transform: scale(1.1) translateY(-2px);
+        }
+
+        /* ===== フッター ===== */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 12px;
+            color: var(--text-sub);
+            letter-spacing: 2px;
+            background: var(--bg-deep);
+        }
+
+        footer a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        /* ===== レスポンシブ ===== */
+        @media (max-width: 600px) {
+            .card {
+                padding: 24px 20px;
+            }
+
+            .work-card {
+                padding: 20px 18px;
+            }
+
+            .day-item {
+                padding: 16px 18px;
+                gap: 14px;
+            }
+
+            .btn-line {
+                padding: 16px 32px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== 読書進捗バー ===== -->
+    <div id="progress-bar"></div>
+
+    <!-- ===== ヘッダー ===== -->
+    <header>
+        <div class="header-content">
+            <div class="header-label">M A S A &nbsp;|&nbsp; Coaching &nbsp;— Gift Guide</div>
+
+            <div class="header-badge">LINE登録者限定プレゼント</div>
+
+            <div class="header-question">「なぜ私だけ動けないの？」</div>
+
+            <h1>40代からの心理ブレーキを外す<br>7日間プログラム</h1>
+
+            <div class="gold-line"></div>
+
+            <p class="header-sub">
+                バンデューラ・ABC理論・If-Thenプランで<br>
+                今日から 0.1mm 動き出す実践ガイド
+            </p>
+        </div>
+
+        <div class="scroll-hint">Scroll</div>
+    </header>
+
+    <!-- ===== メインコンテンツ ===== -->
+    <div class="container">
+
+        <!-- はじめに：共感ストーリー -->
+        <div class="section" id="intro">
+            <p class="sec-label">Introduction</p>
+            <h2 class="sec-title">こんなことありませんか？</h2>
+
+            <div class="story-block">
+                <p>
+                    朝、起きてスマホを開く。<br>
+                    <em>「またあの人、新しいこと始めてる…」</em><br><br>
+                    自分は今日も、昨日と同じ一日を過ごした。<br><br>
+                    夜になって布団に入る瞬間、<br>
+                    また小さな罪悪感が胸をよぎる。<br><br>
+                    <em>「いつか動き出そう」</em><br>
+                    <em>「もう少し準備ができたら」</em><br>
+                    <em>「今は忙しいから」</em><br><br>
+                    ── そうやって、また今日も終わった。
+                </p>
+            </div>
+
+            <div class="card">
+                <p class="body-text">
+                    この感覚、ありませんか？<br><br>
+                    もしそうなら、このガイドはあなたのために書きました。<br><br>
+                    <strong>あなたが動けないのは、意志の問題ではありません。</strong><br><br>
+                    多くの人が誤解しています。<br><br>
+                    「やる気が出ないから動けない」<br><br>
+                    実は<strong>逆</strong>です。<br><br>
+                    <strong>動けないから、やる気が出ないのです。</strong><br><br>
+                    心理学ではこれを <span class="highlight">行動活性化</span> と呼びます。
+                </p>
+
+                <div class="flow">
+                    <div class="flow-item">行動</div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-item">小さな達成感</div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-item">自信</div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-item">やる気</div>
+                </div>
+
+                <p class="body-text">
+                    つまり、<strong>やる気を待つ限り、行動は始まりません。</strong><br><br>
+                    このガイドでは、① 思考を整理し　② 心理的ブレーキを理解し　③ 小さく行動を設計する——この順番で進めます。
+                </p>
+            </div>
+        </div>
+
+        <!-- 第1章 -->
+        <div class="section" id="ch1">
+            <p class="sec-label">Chapter 01</p>
+            <h2 class="sec-title">なぜ脳は動きたがらないのか？</h2>
+
+            <div class="card">
+                <div class="chapter-header">
+                    <div class="chapter-num">01</div>
+                    <div class="chapter-title">あなたの脳は、変化よりも<br>"現状維持"を好みます</div>
+                </div>
+
+                <p class="body-text">
+                    これは <span class="highlight">ホメオスタシス（恒常性維持）</span> という仕組みです。<br><br>
+                    脳は「変化＝危険」と判断するため、転職・副業・新しい挑戦に対して、自動的に不安を出します。<br><br>
+                    <strong>これは正常です。</strong><br><br>
+                    問題は、不安を「止まる理由」にしてしまうこと。<br><br>
+                    不安は危険信号ではなく、<strong>成長信号であることが多いのです。</strong>
+                </p>
+            </div>
+        </div>
+
+        <!-- 第2章 -->
+        <div class="section" id="ch2">
+            <p class="sec-label">Chapter 02</p>
+            <h2 class="sec-title">完璧主義の心理構造</h2>
+
+            <div class="card">
+                <div class="chapter-header">
+                    <div class="chapter-num">02</div>
+                    <div class="chapter-title">完璧主義の裏にあるもの</div>
+                </div>
+
+                <ul class="point-list">
+                    <li>失敗回避欲求</li>
+                    <li>他者評価への不安</li>
+                    <li>自己否定の癖</li>
+                </ul>
+
+                <p class="body-text" style="margin-top:16px;">
+                    人は「損失」を強く避ける性質があります。これを <span class="highlight">損失回避バイアス</span> といいます。<br><br>
+                    得られる未来よりも、失う可能性を大きく感じてしまうのです。だから止まります。<br><br>
+                    対処法は単純です。<strong>リスクを小さくする。大きな決断ではなく、小さな実験にする。</strong><br>
+                    これだけで脳の抵抗は下がります。
+                </p>
+            </div>
+        </div>
+
+        <!-- 第3章：ワーク -->
+        <div class="section" id="ch3">
+            <p class="sec-label">Chapter 03</p>
+            <h2 class="sec-title">思考整理ワーク</h2>
+
+            <!-- ワーク1 -->
+            <div class="card">
+                <div class="chapter-header">
+                    <div class="chapter-num">W1</div>
+                    <div class="chapter-title">認知の可視化<br><small style="font-size:13px;color:var(--text-sub);">ABC理論：出来事
+                            → 信念 → 結果</small></div>
+                </div>
+                <p class="body-text">
+                    私たちは「事実」ではなく「解釈」に反応します。<br>
+                    例：<em style="color:var(--text-sub);">（事実）上司に呼ばれた →（解釈）怒られるかも →（感情）不安 →（行動）避ける</em>
+                </p>
+                <div class="work-card">
+                    <div class="work-title">ワーク1：認知の可視化テンプレート</div>
+                    <div class="work-field">
+                        <label>【 出来事 】</label>
+                        <textarea placeholder="例：上司に呼ばれた、応募を考えている求人がある…" rows="2"></textarea>
+                    </div>
+                    <div class="work-field">
+                        <label>【 その時の考え・解釈 】</label>
+                        <textarea placeholder="例：怒られるかも、失敗したらどうしよう…" rows="2"></textarea>
+                    </div>
+                    <div class="work-field">
+                        <label>【 感情 】</label>
+                        <textarea placeholder="例：不安、恐れ、焦り…" rows="2"></textarea>
+                    </div>
+                    <div class="work-field">
+                        <label>【 別の解釈は？ 】</label>
+                        <textarea placeholder="例：もしかして褒めてもらえるかも。失敗しても学べる…" rows="2"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ワーク2 -->
+            <div class="card">
+                <div class="chapter-header">
+                    <div class="chapter-num">W2</div>
+                    <div class="chapter-title">自己効力感を高める<br><small
+                            style="font-size:13px;color:var(--text-sub);">バンデューラの自己効力感理論</small></div>
+                </div>
+                <p class="body-text">
+                    「人は"できる感覚"があると動く」 ── 心理学者バンデューラ<br><br>
+                    自己効力感を上げる4つの方法：
+                </p>
+                <div class="step-grid">
+                    <div class="step-item">
+                        <div class="step-num">①</div>
+                        <div class="step-text">小さな成功体験を積む</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">②</div>
+                        <div class="step-text">他人の成功を見る</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">③</div>
+                        <div class="step-text">励ましの言葉を受け取る</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">④</div>
+                        <div class="step-text">感情を安定させる</div>
+                    </div>
+                </div>
+                <div class="work-card">
+                    <div class="work-title">ワーク2：1ミリ行動テンプレート</div>
+                    <div class="work-field">
+                        <label>【 今日の1ミリ行動 】</label>
+                        <textarea placeholder="例：5分だけノートを開く、求人サイトを1件見る…" rows="2"></textarea>
+                    </div>
+                    <div class="work-field">
+                        <label>【 終わった後の感情 】</label>
+                        <textarea placeholder="例：少しスッキリした、もう少しやれそうだった…" rows="2"></textarea>
+                    </div>
+                    <div class="work-field">
+                        <label>【 自分への一言 】</label>
+                        <textarea placeholder="例：よくやった！小さくても動いた私はすごい。" rows="2"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ワーク3 -->
+            <div class="card">
+                <div class="chapter-header">
+                    <div class="chapter-num">W3</div>
+                    <div class="chapter-title">価値観とアイデンティティ<br><small
+                            style="font-size:13px;color:var(--text-sub);">目標より強い「なりたい自分」の設定</small></div>
+                </div>
+                <p class="body-text">
+                    人は「目標」より「自分はどんな人間か」というアイデンティティに従います。<br><br>
+                    「痩せたい」より <strong>「私は健康を大切にする人だ」</strong> の方が強い。
+                </p>
+                <div class="identity-examples">
+                    <span class="identity-tag">私は成長を大切にする人間だ</span>
+                    <span class="identity-tag">私は挑戦を恐れない人間だ</span>
+                    <span class="identity-tag">私は行動する人間だ</span>
+                </div>
+                <div class="work-card">
+                    <div class="work-title">ワーク3：アイデンティティ宣言</div>
+                    <div class="work-field">
+                        <label>【 私は ＿＿＿＿ を大切にする人間だ 】</label>
+                        <textarea placeholder="声に出しながら書いてみてください…" rows="3"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 第4章：行動設計 -->
+        <div class="section" id="ch4">
+            <p class="sec-label">Chapter 04</p>
+            <h2 class="sec-title">行動設計（科学的アプローチ）</h2>
+
+            <div class="card">
+                <div class="chapter-header">
+                    <div class="chapter-num">04</div>
+                    <div class="chapter-title">実行意図（If-Thenプラン）</div>
+                </div>
+
+                <div class="ifthen-box">
+                    「もし <em>○○</em> したら、<em>△△</em> する」<br>
+                    <span style="font-size:13px;color:var(--text-sub);">例：もし朝コーヒーを飲んだら、ノートを5分書く。</span>
+                </div>
+
+                <p class="body-text">
+                    これだけで行動率は大幅に上がります。<br><br>
+                    さらに、<span class="highlight">ドーパミン設計</span>も加えましょう。<br>
+                    脳は「期待」で動きます。行動後に小さな報酬を設定することで、習慣が形成されます。
+                </p>
+
+                <ul class="point-list" style="margin-top:12px;">
+                    <li>好きなコーヒーを飲む</li>
+                    <li>10分だけ好きな動画を見る</li>
+                    <li>外に出て散歩する</li>
+                </ul>
+
+                <div class="work-card">
+                    <div class="work-title">ワーク4：If-Then & 報酬設計</div>
+                    <div class="work-field">
+                        <label>【 もし ＿＿＿＿ したら、＿＿＿＿ する 】</label>
+                        <textarea placeholder="例：もし朝起きたら、まず5分だけノートを開く。" rows="2"></textarea>
+                    </div>
+                    <div class="work-field">
+                        <label>【 終わったら自分への報酬 】</label>
+                        <textarea placeholder="例：好きなカフェに行く、10分ゆっくりコーヒーを飲む…" rows="2"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 第5章：7日間プログラム -->
+        <div class="section" id="ch5">
+            <p class="sec-label">Chapter 05</p>
+            <h2 class="sec-title">7日間 心理リセットプログラム</h2>
+
+            <p class="body-text" style="margin-bottom:8px;">── 7日後、あなたは今日とは違う場所に立っています。</p>
+            <p class="body-text" style="margin-bottom:28px; font-size:12px;">▼ 各Dayをクリックすると「今日やること」が展開します</p>
+
+            <div class="day-list">
+
+                <!-- Day1 -->
+                <div class="day-item">
+                    <div class="day-badge">Day<br>1</div>
+                    <div class="day-content" style="width:100%;">
+                        <div class="day-name">頭の中のゴミ出し</div>
+                        <div class="day-desc">思考を全部書き出すだけで、頭の霧が3割晴れます。まず書く。それだけでいい。</div>
+                        <button class="day-toggle" onclick="toggleDay(this)"><span class="arrow">▶</span>
+                            今日やること</button>
+                        <div class="day-detail">
+                            <ul class="do-list">
+                                <li><span class="do-step-num">1</span>ノートかメモアプリを開く（スマホのメモでも可）</li>
+                                <li><span class="do-step-num">2</span>タイマーを10分セットする</li>
+                                <li><span class="do-step-num">3</span>頭の中にあることを「全部」書き出す。良い悪い関係なく、思いついたことを片っ端に書く</li>
+                                <li><span class="do-step-num">4</span>書き終わったら読み返す。気になるキーワードに丸をつける</li>
+                            </ul>
+                            <div class="day-mini-work">
+                                <label>【 今日、頭に浮かんだことを書き出してみる 】</label>
+                                <textarea placeholder="例：仕事が嫌だ、副業したい、このままでいいのか、体が疲れてる、老後が不安…何でも書いてOK"
+                                    rows="4"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day2 -->
+                <div class="day-item">
+                    <div class="day-badge">Day<br>2</div>
+                    <div class="day-content" style="width:100%;">
+                        <div class="day-name">感情の正体を見つける</div>
+                        <div class="day-desc">ABC整理で"不安の源"が言語化できます。正体がわかれば、怖くなくなります。</div>
+                        <button class="day-toggle" onclick="toggleDay(this)"><span class="arrow">▶</span>
+                            今日やること</button>
+                        <div class="day-detail">
+                            <ul class="do-list">
+                                <li><span class="do-step-num">1</span>Day1で丸をつけたキーワードを1つ選ぶ</li>
+                                <li><span class="do-step-num">2</span>「その出来事は何か？（事実）」を書く</li>
+                                <li><span class="do-step-num">3</span>「そのとき、どう解釈したか？（考え）」を書く</li>
+                                <li><span class="do-step-num">4</span>「別の解釈があるとしたら？」を最低1つ書く</li>
+                            </ul>
+                            <div class="day-mini-work">
+                                <label>【 事実 → 自分の解釈 → 別の解釈 を書いてみる 】</label>
+                                <textarea placeholder="例）事実：転職サイトを見た。解釈：自分には無理かも。別の解釈：まずは眺めるだけでいい。" rows="4"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day3 -->
+                <div class="day-item">
+                    <div class="day-badge">Day<br>3</div>
+                    <div class="day-content" style="width:100%;">
+                        <div class="day-name">あなたらしさを取り戻す日</div>
+                        <div class="day-desc">価値観を決めると、ブレない軸が生まれます。自分の地図を手に入れる日です。</div>
+                        <button class="day-toggle" onclick="toggleDay(this)"><span class="arrow">▶</span>
+                            今日やること</button>
+                        <div class="day-detail">
+                            <ul class="do-list">
+                                <li><span class="do-step-num">1</span>「人生で大切にしたいこと」を5つ書き出す（例：家族・自由・成長・健康・正直さ）</li>
+                                <li><span class="do-step-num">2</span>その中から最も大事な1〜2つに絞る</li>
+                                <li><span class="do-step-num">3</span>「私は ○○ を大切にする人間だ」という文を声に出して読む</li>
+                                <li><span class="do-step-num">4</span>スマホのメモや壁紙に保存して、毎日目に入る場所に置く</li>
+                            </ul>
+                            <div class="day-mini-work">
+                                <label>【 私のアイデンティティ宣言 】</label>
+                                <textarea placeholder="例）私は「成長」と「自由」を大切にする人間だ。" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day4 -->
+                <div class="day-item">
+                    <div class="day-badge">Day<br>4</div>
+                    <div class="day-content" style="width:100%;">
+                        <div class="day-name">たった1ミリ、動く日</div>
+                        <div class="day-desc">今日だけは完璧でなくていい。動いた事実が全てです。0.1mmの前進を記録してください。</div>
+                        <button class="day-toggle" onclick="toggleDay(this)"><span class="arrow">▶</span>
+                            今日やること</button>
+                        <div class="day-detail">
+                            <ul class="do-list">
+                                <li><span class="do-step-num">1</span>「5分でできること」を1つだけ決める（例：本を1ページ読む、メールを1件書く）</li>
+                                <li><span class="do-step-num">2</span>タイマーを5分セットして、その1つだけをやる</li>
+                                <li><span class="do-step-num">3</span>終わったら「やった！」と声に出す（本当に！脳が喜びます）</li>
+                                <li><span class="do-step-num">4</span>下の記入欄に「やったこと」と「気持ち」を記録する</li>
+                            </ul>
+                            <div class="day-mini-work">
+                                <label>【 今日の1ミリ行動：何をした？どんな気持ちだった？ 】</label>
+                                <textarea placeholder="例）転職サイトを5分だけ見た。少し胸がワクワクした。" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day5 -->
+                <div class="day-item">
+                    <div class="day-badge">Day<br>5</div>
+                    <div class="day-content" style="width:100%;">
+                        <div class="day-name">行動の設計図を引く</div>
+                        <div class="day-desc">If-Thenプランで、明日以降が自動的に変わります。仕組みで動く自分を作ります。</div>
+                        <button class="day-toggle" onclick="toggleDay(this)"><span class="arrow">▶</span>
+                            今日やること</button>
+                        <div class="day-detail">
+                            <ul class="do-list">
+                                <li><span class="do-step-num">1</span>毎日必ずやっていること（習慣）を1つ思い出す（例：朝コーヒーを飲む・歯を磨く）</li>
+                                <li><span class="do-step-num">2</span>「もし○○したら、△△する」の文を1つ作る</li>
+                                <li><span class="do-step-num">3</span>終わったら自分に小さな報酬を決める（例：好きな音楽を聴く）</li>
+                                <li><span class="do-step-num">4</span>明日から実際にやってみる</li>
+                            </ul>
+                            <div class="day-mini-work">
+                                <label>【 私のIf-Thenプラン 】</label>
+                                <textarea placeholder="例）もし朝コーヒーを飲んだら、ノートを5分書く。終わったら好きな音楽を聴く。" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day6 -->
+                <div class="day-item">
+                    <div class="day-badge">Day<br>6</div>
+                    <div class="day-content" style="width:100%;">
+                        <div class="day-name">小さな勝利を記録する日</div>
+                        <div class="day-desc">成功体験を積み上げると、脳が"動ける自分"を信じ始めます。証拠を積む日です。</div>
+                        <button class="day-toggle" onclick="toggleDay(this)"><span class="arrow">▶</span>
+                            今日やること</button>
+                        <div class="day-detail">
+                            <ul class="do-list">
+                                <li><span class="do-step-num">1</span>この6日間を振り返り、「できたこと」を3つ書き出す（小さなことでOK）</li>
+                                <li><span class="do-step-num">2</span>それぞれに「なぜできたか」を一言添える</li>
+                                <li><span class="do-step-num">3</span>6日前の自分と今の自分を比べて、何か変わったことはあるか考えてみる</li>
+                                <li><span class="do-step-num">4</span>自分を褒める言葉を書く（照れなくていい！）</li>
+                            </ul>
+                            <div class="day-mini-work">
+                                <label>【 6日間でできたこと・気づいたこと 】</label>
+                                <textarea placeholder="例）①毎日5分だけノートを書いた ②転職サイトを初めて見た ③不安の正体が少しわかった" rows="4"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day7 -->
+                <div class="day-item">
+                    <div class="day-badge">Day<br>7</div>
+                    <div class="day-content" style="width:100%;">
+                        <div class="day-name">新しい自分への宣言</div>
+                        <div class="day-desc">7日間で変わったあなたが、ここに証拠として残ります。次の7日間の地図を描きましょう。</div>
+                        <button class="day-toggle" onclick="toggleDay(this)"><span class="arrow">▶</span>
+                            今日やること</button>
+                        <div class="day-detail">
+                            <ul class="do-list">
+                                <li><span class="do-step-num">1</span>Day3で書いたアイデンティティ宣言を読み返す</li>
+                                <li><span class="do-step-num">2</span>「7日間でわかった、私の本音」を1つ書く</li>
+                                <li><span class="do-step-num">3</span>「次の一歩として、来週やること」を1つだけ決める</li>
+                                <li><span class="do-step-num">4</span>「もっと深く整理したい」と感じたら、LINEで「心理」と送ってみる</li>
+                            </ul>
+                            <div class="day-mini-work">
+                                <label>【 7日間で気づいた「私の本音」と「次の一歩」 】</label>
+                                <textarea placeholder="例）本音：本当は今の仕事を変えたい。次の一歩：転職エージェントに1件だけ登録してみる。" rows="4"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- おわりに -->
+        <div class="section" id="outro">
+            <div class="divider"></div>
+            <div class="card">
+                <p class="body-text"
+                    style="text-align:center; font-family:var(--font-serif); font-size:16px; line-height:2.4;">
+                    あなたは、怠けているのではありません。<br><br>
+                    脳の仕組みに従っているだけです。<br><br>
+                    だからこそ、<strong>仕組みで変えればいい。</strong>
+                </p>
+            </div>
+        </div>
+
+    </div><!-- /.container -->
+
+    <!-- ===== 最終CTA ===== -->
+    <div class="cta-section">
+        <p class="cta-message">
+            このガイドを読み終えて、<br>
+            もし胸の奥が<strong>ザワッとしたなら</strong>、<br><br>
+            それは「変わりたい」という<strong>あなた自身のサインです。</strong>
+        </p>
+
+        <div class="cta-quote">最初の一歩は、<br>メッセージ一つでいいんです。</div>
+
+        <div class="cta-promise">
+            <span>判断しません</span>
+            <span style="color:var(--border)">|</span>
+            <span>急かしません</span>
+            <span style="color:var(--border)">|</span>
+            <span>ただ、聴きます</span>
+        </div>
+
+        <a href="https://lin.ee/ZfA2eed" target="_blank" class="btn-line" id="cta-line-btn">
+            <span class="btn-line-icon">💬</span>
+            LINEで「心理」と送る
+        </a>
+
+        <div>
+            <span class="keyword-chip">「心理」と送るだけでOK</span>
+        </div>
+    </div>
+
+    <!-- ===== フッター ===== -->
+    <footer>
+        © 2026 &nbsp;まさ &nbsp;—&nbsp; あなたの一歩を静かに引き出すスペシャルコーチ<br>
+        <a href="index.html" style="margin-top:8px;display:inline-block;">← コーチングサービスページへ戻る</a>
+    </footer>
+
+    <!-- ===== トップへ戻るボタン ===== -->
+    <div class="back-nav" id="back-nav">
+        <button class="back-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="トップへ戻る">↑</button>
+    </div>
+
+    <!-- ===== JavaScript ===== -->
+    <script>
+        // --- アコーディオン：Dayクリックで展開 ---
+        function toggleDay(btn) {
+            const detail = btn.nextElementSibling;
+            const isOpen = detail.classList.contains('open');
+            detail.classList.toggle('open', !isOpen);
+            btn.classList.toggle('open', !isOpen);
+        }
+
+        // --- スクロール進捗バー ---
+        const progressBar = document.getElementById('progress-bar');
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.body.scrollHeight - window.innerHeight;
+            const progress = (scrollTop / docHeight) * 100;
+            progressBar.style.width = progress + '%';
+
+            // トップへ戻るボタン
+            const backNav = document.getElementById('back-nav');
+            if (scrollTop > 400) {
+                backNav.classList.add('visible');
+            } else {
+                backNav.classList.remove('visible');
+            }
+        });
+
+        // --- フェードインアニメーション ---
+        const sections = document.querySelectorAll('.section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => observer.observe(section));
+
+        // --- Day アイテムに順番でアニメーション ---
+        const dayItems = document.querySelectorAll('.day-item');
+        const dayObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateX(0)';
+                    }, i * 80);
+                    dayObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        dayItems.forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateX(-16px)';
+            item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            dayObserver.observe(item);
+        });
+    </script>
+
+</body>
+
+</html>
