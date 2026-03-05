@@ -501,6 +501,184 @@
       margin-top: 6px;
     }
 
+    /* ===== Before / After ===== */
+    .before-after {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 20px;
+      align-items: center;
+      margin-top: 8px;
+    }
+
+    .ba-col {
+      border-radius: 18px;
+      padding: 30px 26px;
+    }
+
+    .ba-col.before {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .ba-col.after {
+      background: rgba(201, 168, 76, 0.06);
+      border: 1px solid rgba(201, 168, 76, 0.25);
+    }
+
+    .ba-label {
+      font-size: 11px;
+      letter-spacing: 5px;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .ba-col.before .ba-label {
+      color: var(--text-sub);
+    }
+
+    .ba-col.after .ba-label {
+      color: var(--gold);
+    }
+
+    .ba-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .ba-list li {
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      font-size: 14px;
+      line-height: 1.7;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .ba-list li:last-child {
+      border-bottom: none;
+    }
+
+    .ba-col.before .ba-list li {
+      color: var(--text-sub);
+    }
+
+    .ba-col.before .ba-list li::before {
+      content: '×';
+      color: rgba(180, 100, 100, 0.7);
+      flex-shrink: 0;
+      font-weight: 600;
+    }
+
+    .ba-col.after .ba-list li {
+      color: var(--text-main);
+    }
+
+    .ba-col.after .ba-list li::before {
+      content: '✓';
+      color: var(--gold);
+      flex-shrink: 0;
+      font-weight: 600;
+    }
+
+    .ba-arrow {
+      font-size: 28px;
+      color: var(--gold);
+      opacity: 0.7;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      .before-after {
+        grid-template-columns: 1fr;
+      }
+
+      .ba-arrow {
+        transform: rotate(90deg);
+      }
+    }
+
+    /* ===== ストーリーセクション ===== */
+    .story-card {
+      background: linear-gradient(135deg, rgba(201, 168, 76, 0.04), rgba(201, 168, 76, 0.01));
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 48px 44px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .story-card::before {
+      content: '\201C';
+      position: absolute;
+      top: -10px;
+      left: 28px;
+      font-family: var(--font-serif);
+      font-size: 120px;
+      color: var(--gold);
+      opacity: 0.1;
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .story-text {
+      font-family: var(--font-serif);
+      font-weight: 300;
+      font-size: clamp(14px, 2vw, 16px);
+      line-height: 2.4;
+      color: var(--text-main);
+      white-space: pre-line;
+    }
+
+    .story-text .highlight {
+      color: var(--gold-light);
+      font-weight: 400;
+    }
+
+    .story-divider {
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.4;
+      margin: 28px 0;
+    }
+
+    /* ===== 最後のメッセージ ===== */
+    .final-message {
+      text-align: center;
+      padding: 60px 30px;
+      background: radial-gradient(ellipse at center, rgba(201, 168, 76, 0.06) 0%, transparent 70%);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+    }
+
+    .final-message .big-word {
+      font-family: var(--font-serif);
+      font-size: clamp(28px, 5vw, 44px);
+      font-weight: 300;
+      line-height: 1.6;
+      letter-spacing: 4px;
+      background: linear-gradient(135deg, #fff 30%, var(--gold-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 28px;
+    }
+
+    .final-message .sub-text {
+      font-family: var(--font-serif);
+      font-weight: 300;
+      font-size: clamp(14px, 2vw, 17px);
+      color: var(--text-sub);
+      line-height: 2.4;
+      white-space: pre-line;
+    }
+
+    .final-message .sub-text .em {
+      color: var(--gold-light);
+    }
+
     /* ===== 最終CTA ===== */
     .cta-section {
       text-align: center;
@@ -526,6 +704,20 @@
       font-size: 14px;
       margin-bottom: 40px;
       line-height: 2;
+    }
+
+    /* プレゼントバッジ */
+    .present-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #b8922e, var(--gold), #e8c96a);
+      color: #1a1200;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      padding: 6px 20px;
+      border-radius: 50px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
     }
 
     /* ===== フッター ===== */
@@ -580,10 +772,7 @@
 
       <div class="btn-wrap">
         <a href="https://lin.ee/ZfA2eed" target="_blank" class="button primary">
-          LINE登録して無料体験に申し込む
-        </a>
-        <a href="https://lin.ee/ZfA2eed" target="_blank" class="button secondary">
-          無料PDFを受け取る
+          🎁 無料プレゼントを受け取る（LINE登録）
         </a>
       </div>
     </div>
@@ -651,38 +840,79 @@
       </div>
     </div>
 
-    <!-- プログラム詳細 -->
-    <div class="section" id="program">
-      <p class="section-sub">Program</p>
-      <h2 class="section-title">3ヶ月プログラム</h2>
-      <div class="card">
-        <div class="program-detail">
-          <div class="program-item">
-            <div class="program-num">60</div>
-            <div class="program-unit">分 / セッション</div>
-            <div class="program-label">じっくり対話</div>
-          </div>
-          <div class="program-item">
-            <div class="program-num">6</div>
-            <div class="program-unit">回</div>
-            <div class="program-label">月2回 × 3ヶ月</div>
-          </div>
-          <div class="program-item">
-            <div class="program-num">LINE</div>
-            <div class="program-unit">サポート付き</div>
-            <div class="program-label">期間中いつでも</div>
-          </div>
-          <div class="program-item">
-            <div class="program-num">Online</div>
-            <div class="program-unit">完全対応</div>
-            <div class="program-label">全国どこからでも</div>
-          </div>
+
+    <!-- ======================== Before / After ======================== -->
+    <div class="section" id="before-after">
+      <p class="section-sub">Change</p>
+      <h2 class="section-title">こんな変化が起きます</h2>
+      <div class="before-after">
+        <div class="ba-col before">
+          <div class="ba-label">Before</div>
+          <ul class="ba-list">
+            <li>何をすればいいかわからない</li>
+            <li>考えすぎて動けない</li>
+            <li>SNSを見るだけで時間が過ぎる</li>
+          </ul>
         </div>
-        <div class="price-block">
-          <div class="price-label">Investment</div>
-          <div class="price-num">¥220,000</div>
-          <div class="price-tax">税込 / 3ヶ月</div>
+        <div class="ba-arrow">→</div>
+        <div class="ba-col after">
+          <div class="ba-label">After</div>
+          <ul class="ba-list">
+            <li>考えが整理される</li>
+            <li>今日やる一歩が決まる</li>
+            <li>行動が積み重なる</li>
+          </ul>
         </div>
+      </div>
+    </div>
+
+    <!-- ======================== コーチのストーリー ======================== -->
+    <div class="section" id="story">
+      <p class="section-sub">My Story</p>
+      <h2 class="section-title">私自身も、そうでした</h2>
+      <div class="story-card">
+        <p class="story-text"><span class="highlight">「変わりたいのに動けない」</span>
+
+          時期がありました。
+
+          頭の中には
+          たくさんの考えがあるのに
+          何から始めればいいのかわからない。</p>
+        <div class="story-divider"></div>
+        <p class="story-text">でも
+
+          思考を整理する習慣を持ったことで
+          少しずつ行動が変わり始めました。
+
+          大きな変化ではなく
+
+          <span class="highlight">小さな一歩の積み重ね</span>
+
+          それが人生を動かしました。
+        </p>
+        <div class="story-divider"></div>
+        <p class="story-text">だから今
+
+          同じように
+          <span class="highlight">「変わりたいのに動けない」</span>
+
+          と感じている人の
+          一歩をサポートしています。
+        </p>
+      </div>
+    </div>
+
+    <!-- ======================== 最後のメッセージ ======================== -->
+    <div class="section" id="final-msg">
+      <div class="final-message">
+        <div class="big-word">人生は<br>「いつか」<br>では変わりません。</div>
+        <p class="sub-text">変わる人は
+
+          <span class="em">小さな一歩を決めた人</span>です。
+
+          あなたの一歩を
+          静かに引き出します。
+        </p>
       </div>
     </div>
 
@@ -690,17 +920,15 @@
 
   <!-- ======================== 最終CTA ======================== -->
   <div class="cta-section">
-    <h2>まずは、話してみませんか。</h2>
+    <div class="present-badge">🎁 無料プレゼント</div>
+    <h2>あなたの一歩を、今日始めませんか。</h2>
     <p>
-      無料体験セッション（60分）でお気軽にご相談ください。<br>
-      申し込みはLINE登録から。
+      LINE登録で<strong style="color:var(--gold-light)">「思考整理ワークシート」を今すぐ無料でプレゼント</strong>。<br>
+      読むだけで、今日やる一歩が見えてきます。
     </p>
     <div class="btn-wrap">
       <a href="https://lin.ee/ZfA2eed" target="_blank" class="button primary">
-        LINE登録して無料体験に申し込む
-      </a>
-      <a href="https://lin.ee/ZfA2eed" target="_blank" class="button secondary">
-        無料PDFを受け取る
+        🎁 無料プレゼントを受け取る（LINE登録）
       </a>
     </div>
   </div>
