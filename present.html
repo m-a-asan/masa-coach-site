@@ -905,6 +905,330 @@
                 font-size: 14px;
             }
         }
+
+        /* ===== 印刷用スタイル ===== */
+        @media print {
+
+            /* 印刷時の色再現を有効化 */
+            * {
+                -webkit-print-color-adjust: exact; 
+                print-color-adjust: exact;
+            }
+
+            /* 非表示にする要素 */
+            #progress-bar,
+            .scroll-hint,
+            .back-nav,
+            .day-toggle,
+            .btn-line,
+            .keyword-chip {
+                display: none !important;
+            }
+
+            /* ページ全体 */
+            body {
+                background: #fff !important;
+                color: #1a1a1a !important;
+                font-size: 11pt;
+                line-height: 1.7;
+                overflow-x: visible;
+            }
+
+            /* ヘッダー：フルスクリーンを解除して圧縮 */
+            header {
+                min-height: auto !important;
+                padding: 30px 20px !important;
+                background: #f8f7f4 !important;
+                border-bottom: 2px solid #c9a84c;
+                page-break-after: avoid;
+            }
+
+            header::before,
+            header::after {
+                display: none !important;
+            }
+
+            .header-content h1 {
+                background: none !important;
+                -webkit-text-fill-color: #1a1a1a !important;
+                color: #1a1a1a !important;
+                font-size: 20pt !important;
+            }
+
+            .header-label {
+                color: #666 !important;
+            }
+
+            .header-badge {
+                background: #c9a84c !important;
+                color: #fff !important;
+            }
+
+            .header-question {
+                color: #8a6520 !important;
+            }
+
+            .header-sub {
+                color: #555 !important;
+            }
+
+            .gold-line {
+                background: #c9a84c !important;
+            }
+
+            /* メインコンテンツ */
+            .container {
+                padding: 16px 20px !important;
+                max-width: 100% !important;
+            }
+
+            /* セクション共通 */
+            .section {
+                opacity: 1 !important;
+                transform: none !important;
+                margin-bottom: 20px !important;
+                page-break-inside: avoid;
+            }
+
+            .sec-label {
+                color: #c9a84c !important;
+            }
+
+            .sec-title {
+                color: #333 !important;
+                font-size: 13pt !important;
+            }
+
+            .sec-title::after {
+                background: #d4c5a0 !important;
+            }
+
+            /* カード */
+            .card {
+                background: #f9f9f7 !important;
+                border: 1px solid #d4c5a0 !important;
+                box-shadow: none !important;
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
+                page-break-inside: avoid;
+                margin-bottom: 12px !important;
+            }
+
+            /* テキスト */
+            .body-text {
+                color: #333 !important;
+            }
+
+            .body-text strong {
+                color: #7a5515 !important;
+            }
+
+            .highlight {
+                background: #f0ebe0 !important;
+                color: #6b4f1a !important;
+            }
+
+            /* 共感ストーリー */
+            .story-block {
+                border-left-color: #c9a84c !important;
+                background: #faf8f3 !important;
+            }
+
+            .story-block p {
+                color: #444 !important;
+            }
+
+            .story-block em {
+                color: #7a5515 !important;
+            }
+
+            /* チャプター */
+            .chapter-num {
+                color: #c9a84c !important;
+            }
+
+            .chapter-title {
+                color: #1a1a1a !important;
+            }
+
+            /* フロー */
+            .flow-item {
+                background: #f0ebe0 !important;
+                border-color: #d4c5a0 !important;
+                color: #6b4f1a !important;
+            }
+
+            .flow-arrow {
+                color: #c9a84c !important;
+            }
+
+            /* ポイントリスト */
+            .point-list li {
+                color: #333 !important;
+                border-bottom-color: #e0ddd5 !important;
+            }
+
+            .point-list li::before {
+                color: #c9a84c !important;
+            }
+
+            /* ワーク */
+            .work-card {
+                background: #faf8f0 !important;
+                border-color: #c9a84c !important;
+                page-break-inside: avoid;
+            }
+
+            .work-title {
+                color: #7a5515 !important;
+            }
+
+            .work-field label {
+                color: #7a5515 !important;
+            }
+
+            .work-field textarea {
+                background: #fff !important;
+                border: 1px solid #c9a84c !important;
+                color: #333 !important;
+                min-height: 50px !important;
+            }
+
+            /* ステップグリッド */
+            .step-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .step-item {
+                background: #f5f3ee !important;
+                border-color: #d4c5a0 !important;
+            }
+
+            .step-num {
+                color: #c9a84c !important;
+            }
+
+            .step-text {
+                color: #333 !important;
+            }
+
+            /* アイデンティティ */
+            .identity-tag {
+                background: #f0ebe0 !important;
+                border-color: #d4c5a0 !important;
+                color: #6b4f1a !important;
+            }
+
+            /* If-Then */
+            .ifthen-box {
+                background: #faf8f0 !important;
+                border-color: #d4c5a0 !important;
+                color: #1a1a1a !important;
+            }
+
+            .ifthen-box em {
+                color: #7a5515 !important;
+            }
+
+            /* 7日間プログラム */
+            .day-list {
+                gap: 10px !important;
+            }
+
+            .day-item {
+                background: #f9f9f7 !important;
+                border-color: #d4c5a0 !important;
+                opacity: 1 !important;
+                transform: none !important;
+                page-break-inside: avoid;
+            }
+
+            .day-badge {
+                background: #f0ebe0 !important;
+                border-color: #c9a84c !important;
+                color: #7a5515 !important;
+            }
+
+            .day-name {
+                color: #7a5515 !important;
+            }
+
+            .day-desc {
+                color: #555 !important;
+            }
+
+            /* 今日やること：印刷時は常に表示 */
+            .day-detail {
+                display: block !important;
+                border-top-color: #d4c5a0 !important;
+            }
+
+            .do-list li {
+                color: #333 !important;
+                border-bottom-color: #ede8de !important;
+            }
+
+            .do-step-num {
+                background: #f0ebe0 !important;
+                border-color: #c9a84c !important;
+                color: #7a5515 !important;
+            }
+
+            .day-mini-work {
+                background: #faf8f0 !important;
+                border-color: #d4c5a0 !important;
+                page-break-inside: avoid;
+            }
+
+            .day-mini-work label {
+                color: #7a5515 !important;
+            }
+
+            .day-mini-work textarea {
+                background: #fff !important;
+                border: 1px solid #c9a84c !important;
+                color: #333 !important;
+            }
+
+            /* 区切り */
+            .divider {
+                background: #d4c5a0 !important;
+            }
+
+            /* CTA */
+            .cta-section {
+                background: #f8f7f4 !important;
+                border-color: #d4c5a0 !important;
+                padding: 24px 20px !important;
+            }
+
+            .cta-message {
+                color: #333 !important;
+            }
+
+            .cta-message strong {
+                color: #7a5515 !important;
+            }
+
+            .cta-quote {
+                color: #1a1a1a !important;
+                font-size: 16pt !important;
+            }
+
+            .cta-promise {
+                color: #555 !important;
+            }
+
+            /* フッター */
+            footer {
+                background: #f8f7f4 !important;
+                color: #555 !important;
+            }
+
+            footer a {
+                color: #8a6520 !important;
+            }
+        }
     </style>
 </head>
 
@@ -1190,7 +1514,7 @@
             <h2 class="sec-title">7日間 心理リセットプログラム</h2>
 
             <p class="body-text" style="margin-bottom:8px;">── 7日後、あなたは今日とは違う場所に立っています。</p>
-            <p class="body-text" style="margin-bottom:28px; font-size:12px;">▼ 各Dayをクリックすると「今日やること」が展開します</p>
+
 
             <div class="day-list">
 
@@ -1200,9 +1524,9 @@
                     <div class="day-content" style="width:100%;">
                         <div class="day-name">頭の中のゴミ出し</div>
                         <div class="day-desc">思考を全部書き出すだけで、頭の霧が3割晴れます。まず書く。それだけでいい。</div>
-                        <button class="day-toggle" onclick="toggleDay(this)"><span class="arrow">▶</span>
+                        <button class="day-toggle open" onclick="toggleDay(this)"><span class="arrow">▶</span>
                             今日やること</button>
-                        <div class="day-detail">
+                        <div class="day-detail open">
                             <ul class="do-list">
                                 <li><span class="do-step-num">1</span>ノートかメモアプリを開く（スマホのメモでも可）</li>
                                 <li><span class="do-step-num">2</span>タイマーを10分セットする</li>
@@ -1226,7 +1550,7 @@
                         <div class="day-desc">ABC整理で"不安の源"が言語化できます。正体がわかれば、怖くなくなります。</div>
                         <button class="day-toggle" onclick="toggleDay(this)"><span class="arrow">▶</span>
                             今日やること</button>
-                        <div class="day-detail">
+                        <div class="day-detail open">
                             <ul class="do-list">
                                 <li><span class="do-step-num">1</span>Day1で丸をつけたキーワードを1つ選ぶ</li>
                                 <li><span class="do-step-num">2</span>「その出来事は何か？（事実）」を書く</li>
@@ -1249,7 +1573,7 @@
                         <div class="day-desc">価値観を決めると、ブレない軸が生まれます。自分の地図を手に入れる日です。</div>
                         <button class="day-toggle" onclick="toggleDay(this)"><span class="arrow">▶</span>
                             今日やること</button>
-                        <div class="day-detail">
+                        <div class="day-detail open">
                             <ul class="do-list">
                                 <li><span class="do-step-num">1</span>「人生で大切にしたいこと」を5つ書き出す（例：家族・自由・成長・健康・正直さ）</li>
                                 <li><span class="do-step-num">2</span>その中から最も大事な1〜2つに絞る</li>
@@ -1272,7 +1596,7 @@
                         <div class="day-desc">今日だけは完璧でなくていい。動いた事実が全てです。0.1mmの前進を記録してください。</div>
                         <button class="day-toggle" onclick="toggleDay(this)"><span class="arrow">▶</span>
                             今日やること</button>
-                        <div class="day-detail">
+                        <div class="day-detail open">
                             <ul class="do-list">
                                 <li><span class="do-step-num">1</span>「5分でできること」を1つだけ決める（例：本を1ページ読む、メールを1件書く）</li>
                                 <li><span class="do-step-num">2</span>タイマーを5分セットして、その1つだけをやる</li>
@@ -1295,7 +1619,7 @@
                         <div class="day-desc">If-Thenプランで、明日以降が自動的に変わります。仕組みで動く自分を作ります。</div>
                         <button class="day-toggle" onclick="toggleDay(this)"><span class="arrow">▶</span>
                             今日やること</button>
-                        <div class="day-detail">
+                        <div class="day-detail open">
                             <ul class="do-list">
                                 <li><span class="do-step-num">1</span>毎日必ずやっていること（習慣）を1つ思い出す（例：朝コーヒーを飲む・歯を磨く）</li>
                                 <li><span class="do-step-num">2</span>「もし○○したら、△△する」の文を1つ作る</li>
@@ -1318,7 +1642,7 @@
                         <div class="day-desc">成功体験を積み上げると、脳が"動ける自分"を信じ始めます。証拠を積む日です。</div>
                         <button class="day-toggle" onclick="toggleDay(this)"><span class="arrow">▶</span>
                             今日やること</button>
-                        <div class="day-detail">
+                        <div class="day-detail open">
                             <ul class="do-list">
                                 <li><span class="do-step-num">1</span>この6日間を振り返り、「できたこと」を3つ書き出す（小さなことでOK）</li>
                                 <li><span class="do-step-num">2</span>それぞれに「なぜできたか」を一言添える</li>
@@ -1341,7 +1665,7 @@
                         <div class="day-desc">7日間で変わったあなたが、ここに証拠として残ります。次の7日間の地図を描きましょう。</div>
                         <button class="day-toggle" onclick="toggleDay(this)"><span class="arrow">▶</span>
                             今日やること</button>
-                        <div class="day-detail">
+                        <div class="day-detail open">
                             <ul class="do-list">
                                 <li><span class="do-step-num">1</span>Day3で書いたアイデンティティ宣言を読み返す</li>
                                 <li><span class="do-step-num">2</span>「7日間でわかった、私の本音」を1つ書く</li>
